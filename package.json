@@ -3,9 +3,15 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "test": "jest --runInBand"
+  },
   "dependencies": {
     "graphql": "^15.0.0",
     "graphql-tools": "^5.0.0",
     "jest": "^26.0.1"
+  },
+  "devDependencies": {
+    "prettier": "^2.0.5"
   }
 }
