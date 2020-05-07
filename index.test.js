@@ -60,3 +60,26 @@ it("does not work", async () => {
 
   expect(result.data.search).toBe("result");
 });
+
+it("works without variables", async () => {
+  const schema = mergeSchemas({
+    schemas: [
+      makeExecutableSchema({
+        typeDefs,
+        resolvers,
+      }),
+    ],
+    resolvers: [],
+  });
+
+  let query = `
+    query {
+      search
+    }
+  `;
+
+  let result = await graphql(schema, query, {}, {}, variables);
+  console.log(result);
+
+  expect(result.data.search).toBe("result");
+});
