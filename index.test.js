@@ -78,7 +78,7 @@ it("works without variables", async () => {
     }
   `;
 
-  let result = await graphql(schema, query, {}, {}, variables);
+  let result = await graphql(schema, query, {}, {});
   console.log(result);
 
   expect(result.data.search).toBe("result");
